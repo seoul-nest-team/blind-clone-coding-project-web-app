@@ -1,2 +1,5 @@
-import { createReducer, createSetValueAction, setValueReducer } from '../../../../common/redux-helper';
-
+import {
+    createReducer,
+    createSetValueAction,
+    setValueReducer,
+} from '../../../../common/redux-helper';
