@@ -25,7 +25,6 @@ export const actions = {
     }),
 };
 
-
 //리듀서 코드
 const reducer = createReducer(INITIAL_STATE, {
     [HOME]: (state: AppbarState) => (state.tab = 'home'),
