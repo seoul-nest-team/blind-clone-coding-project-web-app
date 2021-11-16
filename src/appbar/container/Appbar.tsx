@@ -27,7 +27,15 @@ function Appbar() {
         <Box sx={{ flexGrow: 1, '& button': { m: 1 } }}>
             <AppBar position="static" color="inherit">
                 <Toolbar>
-                    <Typography variant="h4" component="div" sx={{ mr: 4 }}>
+                    <Typography
+                        variant="h4"
+                        component="div"
+                        sx={{ mr: 4 }}
+                        onClick={() =>
+                            //dispatch(actions.selectTab('home'))
+                            dispatch(actions.setValue('selectedtab', 'home'))
+                        }
+                    >
                         blind
                     </Typography>
 
@@ -100,7 +108,16 @@ function Appbar() {
                     <Button color="error" size="large" variant="contained">
                         글쓰기
                     </Button>
-                    <Button color="inherit" size="large" variant="outlined">
+                    <Button
+                        color="inherit"
+                        size="large"
+                        variant="outlined"
+                        onClick={() => {
+                            dispatch(
+                                actions.setValue('loginpopupopened', true),
+                            );
+                        }}
+                    >
                         로그인
                     </Button>
                 </Toolbar>

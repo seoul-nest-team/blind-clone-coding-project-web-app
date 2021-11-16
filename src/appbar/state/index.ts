@@ -6,12 +6,17 @@ import {
 
 //Appbar STATUS의 데이터 타입 정보
 export type AppbarStateType = {
-    selectedtab: string;
+    selectedtab: string; //선택된 tab 정보
+    loginpopupopened: boolean; //로그인모달팝업오픈여부
+    loginpopupstatus: string;
+    //로그인화면 표시 -> 회원가입버튼 클릭-> 회원가입화면 표시-> 로그인화면 표시
 };
 
 //STATUS
 const INITIAL_STATE: AppbarStateType = {
     selectedtab: 'home',
+    loginpopupopened: false,
+    loginpopupstatus: 'login',
 };
 
 //ACTION 종류
@@ -32,7 +37,7 @@ export const actions = {
     //     type: types.SELECT_TAB,
     //     tabName,
     // }),
-    setValue: createSetValueAction(types.SET_VALUE),//단순 status값 변경 ACTION은 setValue로 공통화해서 사용
+    setValue: createSetValueAction(types.SET_VALUE), //단순 status값 변경 ACTION은 setValue로 공통화해서 사용
 };
 
 //reducer 코드

@@ -4,10 +4,10 @@ import Home from '../component/home/container/Home';
 
 function Content() {
     return (
-        <React.Fragment>
+        <>
             <Home />
             <CompanyReview />
-        </React.Fragment>
+        </>
     );
 }
 

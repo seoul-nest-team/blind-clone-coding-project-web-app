@@ -7,15 +7,15 @@ import {
     Grid,
 } from '@mui/material';
 import { useSelector } from 'react-redux';
-import { getSelectedTab } from '../../../../appbar/state/selector';
+import { getLoginPopupOpened, getSelectedTab } from '../../../../appbar/state/selector';
 
 function CompanyReview() {
-    const [selectedTab] = useSelector((state: any) => [getSelectedTab(state)]);
+    const [selectedTab, loginPopupOpened] = useSelector((state: any) => [getSelectedTab(state), getLoginPopupOpened(state)]);
 
     return (
         <Container
             maxWidth="lg"
-            sx={selectedTab === 'review' ? {} : { display: 'none' }}
+            sx={(!loginPopupOpened) && selectedTab === 'review' ? {} : { display: 'none' }}
         >
             <Typography variant="h3" component="div" align="center">
                 <br />
